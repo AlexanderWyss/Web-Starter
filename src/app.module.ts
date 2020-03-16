@@ -8,7 +8,7 @@ import { join } from 'path';
   imports: [
     ServeStaticModule.forRoot(
       {
-        rootPath: join(__dirname, '../client/'),
+        rootPath: join(__dirname, './client/'),
       },
     ),
   ],
