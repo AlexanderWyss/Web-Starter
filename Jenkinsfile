@@ -3,7 +3,23 @@ node {
     stage('Clone repository') {
         checkout scm
     }
-    stage('Build image') {
+    stage('Dependencies Server') {
+        sh 'npm i'
+    }
+    stage('Build Server') {
+        sh 'npm run build --prod'
+    }
+    stage('Dependencies Client') {
+        dir('client') {
+            sh 'npm i'
+        }
+    }
+    stage('Build Client') {
+        dir('client') {
+            sh 'npm run build --prod'
+        }
+    }
+    stage('Build Docker image') {
         dockerImage = docker.build("alexanderwyss/web-starter")
     }
     stage('Deploy') {
