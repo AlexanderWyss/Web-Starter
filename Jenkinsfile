@@ -1,5 +1,4 @@
 node {
-    def dockerImage
     stage('Clone repository') {
         checkout scm
     }
@@ -20,7 +19,7 @@ node {
         }
     }
     stage('Build Docker image') {
-        dockerImage = docker.build("alexanderwyss/web-starter")
+        docker.build("alexanderwyss/web-starter")
     }
     stage('Deploy') {
         sh 'docker stop web-starter || true && docker rm -f web-starter || true'
