@@ -27,6 +27,7 @@
     "@nestjs/platform-socket.io": "^7.6.4",
     "@nestjs/serve-static": "^2.1.4",
     "@nestjs/websockets": "^7.6.4",
+    "dotenv": "^8.2.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.3"
