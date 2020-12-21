@@ -3,14 +3,14 @@ node {
         checkout scm
     }
     stage('Dependencies Server') {
-        sh 'npm i'
+        sh 'npm ci'
     }
     stage('Build Server') {
         sh 'npm run build --prod'
     }
     stage('Dependencies Client') {
         dir('client') {
-            sh 'npm i'
+            sh 'npm ci'
         }
     }
     stage('Build Client') {
