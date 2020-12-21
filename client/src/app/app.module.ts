@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io'
 import { environment } from '../environments/environment';
 
-export function getUrl() {
+export function getUrl(): string {
   if (environment.production) {
     return window.location.hostname + ':' + window.location.port;
   } else {
@@ -15,7 +15,7 @@ export function getUrl() {
   }
 }
 
-export function getProtocol() {
+export function getProtocol(): string {
   return window.location.protocol + '//';
 }
 
